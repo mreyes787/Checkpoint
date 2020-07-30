@@ -72,7 +72,7 @@ CREATE A FUNCTION THAT TAKES TWO ARGUMENTS, A WORD AND A CHARACTER, IT THEN RETU
 
 
 e.g. indexOf('hello', 'l') ===> 2
-
+ 
 */
 
 function indexOf(str, char) {
