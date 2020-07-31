@@ -76,7 +76,12 @@ e.g. indexOf('hello', 'l') ===> 2
 */
 
 function indexOf(str, char) {
-  // CODE HERE
+  for (let i =0; i < str.length; i++){
+    if (str[i] === char)
+      return i;
+  }
+  return -1;
+
 }
 
 /*
@@ -108,8 +113,23 @@ FizzBuzz
 */
 
 function fizzBuzz(num) {
-  // CODE HERE
-}
+  for(let i=1; i <= num; i++){
+    if ((i % 3 === 0) && (i % 5 === 0)){
+      console.log("FizzBuzz")
+    }
+  else  if ((i % 3) === 0){
+    console.log("Fizz")
+  }
+  else if ((i % 5) === 0){
+    console.log("Buzz")
+  }
+  else {
+    console.log(i);
+  }
+
+} //end of for loop
+
+} //end of the function
 
 /*
 QUESTION 6
@@ -122,7 +142,17 @@ THE FIBONACCI SEQUENCE STARTS WITH 1 AND 1 AND THEN THE NEXT NUMBER IS THE ADDIT
 */
 
 function fibonacci(n) {
-  // CODE HERE
+  var previous_first = 0, previous_second = 1, next = 1;
+
+    for(var i = 2; i <= n; i++) {
+     //  console.log(i)
+        next = previous_first + previous_second;
+    // console.log(next, previous_first, previous_second)
+        previous_first = previous_second;
+        previous_second = next;
+}
+return next;
+
 }
 
 console.log(fibonacci(5));
