@@ -39,8 +39,10 @@ pushTrue([1,2,3]) ===> [1, 2, 3, 'last element']
 */
 
 function pushString(arr) {
-  // CODE HERE
-  console.log(arr);
+ // console.log(arr, arr.length)
+ arr[arr.length] =  "last element";
+ // console.log(arr);
+ return arr;
 }
 
 /*
@@ -58,7 +60,12 @@ mutateZeroElem([1,2,3]) ===> [1, 2, 3, true]
 */
 
 function push(array, value) {
-  // CODE HERE
+ // console.log(array, value)
+  //  array[0] = true ;
+ // console.log(array.length)
+    array[array.length] = value;
+ // console.log(array)
+ return array
 }
 
 /*
@@ -80,7 +87,9 @@ true
 */
 
 function printElements(array) {
-  // CODE HERE
+  for (let i=0; i < array.length; i++){
+    console.log(array[i]);
+  }
 }
 
 /*
@@ -109,7 +118,13 @@ unique([1,2,3,2,3,2]) ===> [1, 2, 3];
 */
 
 function unique(array) {
-  // CODE HERE
+  let array2 = [];
+  for (let i=0; i < array.length; i++){
+    if ( ! array2.includes(array[i]))
+      array2.push(array[i])
+  //  console.log(array, array2)
+  }
+  return array2;
 }
 
 /*
@@ -125,7 +140,13 @@ HINT USE AN INNER FOR-LOOP
 */
 
 function compare(array1, array2) {
-  // CODE HERE
+  for (let i=0; i < array2.length; i++){
+    if (  array1.includes(array2[i])){
+      return true
+    }
+  }
+  return false
+
 }
 
 /*
@@ -141,7 +162,13 @@ compareArrays([1, 2, 3, 4], [1, 2]) ====> [1, 2]
 */
 
 function compareArrays(array1, array2) {
-  // CODE HERE
+  let finalArray = [];
+for (let i=0; i < array2.length; i++){
+    if (array1.includes(array2[i])){
+      finalArray.push(array2[i])
+    }
+}
+return finalArray
 }
 
 /*
@@ -156,7 +183,13 @@ compareArraysOpposite([1,2,3,4], [1,3]) ===> [2, 4]
 */
 
 function compareArraysOpposite(array1, array2) {
-  // CODE HERE
+  let finalArray = [];
+ for (let i=0; i < array1.length; i++){
+  if( ! array2.includes(array1[i])){
+       finalArray.push(array1[i])
+  }
+ }
+   return finalArray
 }
 
 /*
@@ -181,7 +214,8 @@ retrieveValue(twoDimentionArray, 3, 1) ===> 1
 */
 
 function retrieveValue(arr, row, col) {
-  // CODE HERE
+  return (arr[row][col])
+  console.table(arr)
 }
 
 /*
@@ -211,7 +245,17 @@ createTwoDArray(3, 5) ===> [
 */
 
 function createTwoDArray(row, col) {
-  // CODE HERE
+  let x = [];
+
+  for(let i=0; i < row; i++){
+     x.push(new Array);
+     for (let j=0; j < col; j++){
+        x[i][j]= 0;
+     }
+ 
+  }
+ //console.log(x)
+ return x;
 }
 
 /*
